@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root {
+    --accent:   #00b0a4;
+    --contrast: #ff00ba;
+
+    --back-main:  #000;
+    --back-head:  #000;
+    --back-card:  #000;
+    --back-panel: #111;
+
+    --text-high: #eee;
+    --text-low:  #999;
+    --text-dark: #111;
+
+    --shadow:       0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+    --shadow-small: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+
+/*** DEBUG *******************************************************/
+
+/* main, header, nav, div, ul, ol, li, h1, h2, h3 {
+    outline: 1px solid red;
+} */
+
+
+/*** GENERAL *******************************************************/
+
+html,
+body {
+    font-family: system-ui, sans-serif;
+    font-size:   14px;
+    background:  var(--back-main);
+    color:       var(--text-high);
+
+    background-image:      url('../images/back.jpg');
+    background-position:   center;
+    background-attachment: fixed;
+    background-size:       cover;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Anton', system-ui, sans-serif;
+}
+
+
+h2 {
+    font-size:     2.2rem;
+    margin-bottom: 2rem;
+    color:         var(--accent);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color:           var(--accent);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--contrast);
+}
+
+
+/*** HEADER *******************************************************/
+
+#main-header {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    flex-wrap:       wrap;
+    gap:             1rem;
+
+    position: sticky;
+    top:      0;
+    z-index:  99;
+
+    padding:    1rem;
+    background: var(--back-head);
+    box-shadow: var(--shadow);
+}
+
+#main-header h1,
+#main-header h1 a {
+    font-size:       min(1.8rem, 5vw);
+    color:           var(--accent);
+    text-decoration: none;
+}
+
+#main-header h1 {
+    flex: 1;
+}
+
+#main-header h1 a {
+    display:     flex;
+    gap:         1rem;
+    align-items: center;
+}
+
+#user-info {
+    font-size: 1.3rem;
+    flex:      1;
+}
+
+
+
+/*** NAV *******************************************************/
+
+#main-nav img {
+    width:  2rem;
+    height: 2rem;
+}
+
+#main-nav input {
+    display: none;
+}
+
+#main-nav ul {
+    position:       fixed;
+    right:          0;
+    top:            0;
+    bottom:         0;
+    min-width:      10rem;
+    padding:        1rem;
+    background:     var(--back-panel);
+    box-shadow:     var(--shadow);
+    display:        flex;
+    flex-direction: column;
+    gap:            1rem;
+    z-index:        999;
+}
+
+#main-nav a {
+    font-size:       1.5rem;
+    text-decoration: none;
+}
+
+#main-nav a:hover {
+    text-decoration: underline;
+}
+
+#main-nav input:not(:checked)~ul {
+    display: none;
+}
+
+
+
+/*** MAIN *******************************************************/
+
+main {
+    padding: 1.5rem 1rem;
+
+    min-height:      calc(100vh - 7rem);
+    display:         flex;
+    flex-direction:  column;
+    gap:             2rem;
+    align-items:     center;
+    justify-content: center;
+}
+
+main p {
+    text-align: center;
+}
+
+
+
+/*** CARDS *******************************************************/
+
+.card {
+    background:    var(--back-card);
+    padding:       1rem;
+    border-radius: 0.5rem;
+    box-shadow:    var(--shadow);
+}
+
+.card h2 {
+    font-size:     1.8rem;
+    margin-bottom: 2rem;
+    color:         var(--accent);
+}
+
+.card h3 {
+    font-size:     1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card label {
+    display:       block;
+    font-size:     1.1rem;
+    color:         var(--text-low);
+    margin-bottom: 0.2rem;
+}
+
+.card label:not(:first-of-type) {
+    margin-top: 1.5rem;
+}
+
+
+
+/*** PHOTOS *******************************************************/
+
+#gallery {
+    display:         flex;
+    flex-wrap:       wrap;
+    justify-content: center;
+    gap:             2rem;
+    max-width:       80rem;
+}
+
+.photo {
+    max-width:      80rem;
+    position:       relative;
+    padding:        1rem;
+    display:        flex;
+    flex-direction: column;
+    gap:            1rem;
+}
+
+.photo.preview {
+    width:      min(24rem, 100%);
+    transition: all 250ms;
+}
+
+.photo.preview:hover {
+    transform: scale(1.05);
+}
+
+.photo .info {
+    color:       var(--text-low);
+    text-align:  right;
+    padding-top: 0.75rem;
+    border-top:  1px solid var(--back-panel);
+}
+
+.photo figure {
+    flex: 1;
+}
+
+.photo img {
+    border: 1px solid var(--back-main);
+}
+
+.photo.preview img {
+    object-fit:   cover;
+    aspect-ratio: 1;
+}
+
+.photo figcaption {
+    margin-top: 1rem;
+}
+
+
+/*** FORMS *******************************************************/
+
+form {
+    margin:    0 auto;
+    width:     100%;
+    max-width: 30rem
+}
+
+input,
+textarea {
+    display:       block;
+    width:         100%;
+    font-size:     1.2rem;
+    padding:       0.3rem 0.5rem;
+    color:         var(--text-high);
+    background:    var(--back-panel);
+    border:        1px solid var(--accent);
+    border-radius: 0.4rem;
+}
+
+input[type=number],
+input[type=date],
+input[type=checkbox],
+input[type=submit] {
+    width: auto;
+}
+
+input[type=checkbox] {
+    width:  1.5rem;
+    height: 1.5rem;
+}
+
+
+input[type=submit] {
+    color:      var(--text-dark);
+    background: var(--accent);
+    margin:     2rem 0 0.5rem auto;
+}
+
+textarea {
+    min-height: 8rem;
+}

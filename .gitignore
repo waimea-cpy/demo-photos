@@ -1,0 +1,7 @@
+.db.ini
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.jfif
+uploads/*.png
+uploads/*.webp
+uploads/*.gif
