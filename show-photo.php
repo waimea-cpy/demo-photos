@@ -4,9 +4,7 @@
 
 
     // Make sure that there is an ID passed via GET
-    if( !isset( $_GET['id'] ) || empty( $_GET['id'] ) ) {
-        die( "Unknown photo ID" );
-    }
+    if( !isset( $_GET['id'] ) || empty( $_GET['id'] ) ) showErrorAndDie( "Unknown photo ID" );
 
     // Get the ID from the URL
     $photoID = $_GET['id'];
