@@ -26,24 +26,39 @@ Site has a simple but responsive UI, including:
 
 ## Screenshots
 
-Post Feed
+Browsing Photos
 
-![Post Feed](ui/ui-feed.png)
+![Browse](ui/ui-browse.png)
 
-Post List
-
-![Post List](ui/ui-list.png)
-
-Post View
-
-![Post View](ui/ui-view.png)
-
-New Post
-
-![New Post](ui/ui-new.png)
-
-Menu
+Main Menu
 
 ![Menu](ui/ui-menu.png)
 
+Photo Page
+
+![Photo](ui/ui-photo.png)
+
+Browsing on mobile
+
+![Browse mobile](ui/ui-mob-browse.png)
+
+Photo Page on Mobile
+
+![Mobile Photo](ui/ui-mob-photo.png)
+
+Create New Account
+
+![New Account](ui/ui-account.png)
+
+Login
+
+![Login](ui/ui-login.png)
+
+View Own Photos (inc. Private)
+
+![Own Photos](ui/ui-own.png)
+
+Upload a Photo
+
+![Upload](ui/ui-upload.png)
 
