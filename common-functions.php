@@ -297,15 +297,18 @@ function uploadImage( $image, $folder, $random=false ) {
     // Check image file size is not too large (2MB max on server)
     if( $imageError == 1 || $imageSize > 2000000 ) showErrorAndDie( 'The image file is too large (2MB max)' );
 
-    // Check if image is an actual image
-    $validImage = getimagesize( $imageTempName );
-    if( !$validImage ) showErrorAndDie( 'The file does not contain image data' );
+    // Check if image is an actual image (excluding SVG which are text files)
+    if( $imageType != 'image/svg+xml' ) {
+        $validImage = getimagesize( $imageTempName );
+        if( !$validImage ) showErrorAndDie( 'The file does not contain image data' );
+    }
 
     // Check the image is of a suitable type
-    if( $imageType != 'image/png' &&
+    if( $imageType != 'image/svg+xml' &&
+        $imageType != 'image/png' &&
         $imageType != 'image/jpeg' &&
         $imageType != 'image/gif' &&
-        $imageType != 'image/webp' ) showErrorAndDie( 'Only JPEG, JFIF, WEBP, PNG or GIF images are allowed' );
+        $imageType != 'image/webp' ) showErrorAndDie( 'Only JPEG, JFIF, WEBP, PNG, GIF and SVG images are allowed' );
 
     return uploadFile( $image, $folder, $random );
 }
